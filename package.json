@@ -1,0 +1,26 @@
+{
+  "name": "ai-experiments",
+  "version": "0.0.1",
+  "description": "Experiments with Neural Networks and Machine Learning",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fju/ai-experiments.git"
+  },
+  "keywords": [
+    "neural-network"
+  ],
+  "author": "Fju",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fju/ai-experiments/issues"
+  },
+  "homepage": "https://github.com/Fju/ai-experiments#readme",
+  "dependencies": {
+    "electron": "^1.7.9"
+  }
+}

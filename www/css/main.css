@@ -1,0 +1,41 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/Open-Sans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+* {
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	box-sizing: border-box;
+}
+html {
+	font-size: 16px;
+}
+body {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: geometricPrecision;
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+
+	font-family: 'Open Sans', Helvetica, Tahoma, Arial, sans-serif;
+	font-size: 1em;
+	font-weight: 400;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	color: #333;
+	min-height: 100vh;
+
+	display: flex;
+	flex-direction: column;
+}
+
+svg {
+	font-family: 'Open Sans';
+}
