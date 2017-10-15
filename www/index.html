@@ -7,9 +7,12 @@
 		<link rel="stylesheet" type="text/css" href="css/main.css" />
 	</head>
 	<body>
-		<div class="toolbar"><button id="train-start">Start training</button></div>
-		<svg id="linechart" width="950" height="600" viewBox="0 0 950 600" preserveAspectRatio="xMinYMin meet"></svg>
-		<svg id="development" width="950" height="200"></svg>
+		<div class="toolbar">
+			<button id="train-start">Start training</button>
+			<label>Learning rate: <input type="text" value="0.01"/></label>
+		</div>
+		<svg id="linechart" width="1200" height="600" viewBox="0 0 1200 600" preserveAspectRatio="xMinYMin meet"></svg>
+		<svg id="devchart" width="1200" height="300"></svg>
 	</body>
 	<script src="js/d3.js"></script>
 	<script src="js/line-chart.js"></script>

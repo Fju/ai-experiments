@@ -35,7 +35,21 @@ body {
 	display: flex;
 	flex-direction: column;
 }
-
-svg {
+svg, input, button {
 	font-family: 'Open Sans';
+}
+
+svg .axis-lbl {
+	fill: #333;
+	font-size: 1.25em;
+}
+
+input[type="text"] {
+	padding: 5px;
+	border-radius: 3px;
+	border: 1px solid #333;
+	outline: none;
+	font-size: 1em;
+	width: 5em;
+	margin-left: 10px;
 }

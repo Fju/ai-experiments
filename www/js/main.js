@@ -7,14 +7,13 @@ layer_defs.push({type:'regression', num_neurons: 1});
 var net = new convnetjs.Net();
 net.makeLayers(layer_defs);
 
-// forward a random data point through the network
-var trainer = new convnetjs.SGDTrainer(net, {learning_rate:0.01, momentum:0.0, batch_size:1, l2_decay:0.001})
-
 function f(x) {
 	return 3*Math.sin(x);
 }
 
 function train(iters) {
+	var trainer = new convnetjs.SGDTrainer(net, {learning_rate: 0.02, momentum:0.0, batch_size:1, l2_decay:0.001})
+
 	var netx = new convnetjs.Vol(1,1,1), x, y, avloss = 0.0;
 	for (var k = 0; k < iters; ++k) {
 		for (var i = 0; i != 50; ++i) {
@@ -26,7 +25,6 @@ function train(iters) {
 		}
 	}	
 	avloss /= 50*iters;
-	console.log('Average loss:', avloss);
 	
 	// generate data for line chart
 	var data = [];
@@ -37,6 +35,8 @@ function train(iters) {
 		data.push({x: x, y: y});
 	}
 	lineChart.update(data);
+
+	return avloss;
 }
 
 function test(x) {
@@ -49,14 +49,17 @@ function test(x) {
 	console.log('Error:', Math.abs(y1 - y0));
 }
 
-var lineChart = new LineChart('linechart');
-var trainingId;
+var lineChart = new LineChart('linechart'), developmentChart = new DevelopmentChart('devchart');
+var trainingId, iteration = 0;
 document.getElementById('train-start').addEventListener('click', function(e) {
 	var t = e.target.textContent;
 	if (t === 'Start training') {
 		e.target.textContent = 'Stop training';
+
 		trainingId = setInterval(function() {
-			train(5);
+			var loss = train(5);
+			iteration += 5
+			developmentChart.addData(iteration, loss);
 		}, 250);
 	} else {
 		e.target.textContent = 'Start training';
