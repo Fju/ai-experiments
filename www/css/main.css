@@ -53,3 +53,17 @@ input[type="text"] {
 	width: 5em;
 	margin-left: 10px;
 }
+button {
+	padding: 5px;
+	margin: 0 2px;
+}
+label {
+	margin: 3px 7px;	
+}
+
+.toolbar {
+	padding: 1em;
+}
+.information {
+	padding: 1em;
+}

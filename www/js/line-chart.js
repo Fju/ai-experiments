@@ -26,7 +26,7 @@ function LineChart(elementId) {
 	var scaleY = d3.scaleLinear().range([height, 0]);
 
 	scaleX.domain([0, Math.PI]);
-	scaleY.domain([0, 3]);
+	scaleY.domain([0, 4]);
 
 	var line = d3.line().x(function (d) { return scaleX(d.x); }).y(function (d) { return scaleY(d.y); });
 
@@ -151,4 +151,8 @@ function DevelopmentChart(elementId) {
 			svg_path.attr('d', line);
 		}			
 	};
+	this.clearData = function() {
+		data.length = 0;
+
+	}
 }
